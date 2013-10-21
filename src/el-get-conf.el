@@ -24,7 +24,6 @@
 (el-get 'sync 'auto-install)
 (el-get 'sync 'browse-kill-ring)
 (el-get 'sync 'browse-kill-ring+)
-(el-get 'sync 'cl-lib)
 (el-get 'sync 'coffee-mode)
 (el-get 'sync 'color-occur)
 (el-get 'sync 'drag-stuff)
