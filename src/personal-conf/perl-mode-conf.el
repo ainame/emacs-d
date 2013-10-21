@@ -1,0 +1,16 @@
+(defalias 'perl-mode 'cperl-mode)
+(setq auto-mode-alist (cons '("\\.t$" . cperl-mode) auto-mode-alist))
+(add-hook 
+ 'cperl-mode-hook
+ '(lambda ()
+    (set-face-background 'cperl-hash-face "black")
+    (set-face-background 'cperl-array-face "black")
+    (cperl-set-style "PerlStyle")
+    (setq indent-tabs-mode nil)
+    (setq cperl-indent-parens-as-block t)
+    (setq cperl-close-paren-offset -4)
+    (setq cperl-continued-statement-offset 4)
+    (setq cperl-comment-column 40)
+    ;;(setq cperl-electric-keywords t)
+    ;;(setq cperl-hairy t)
+    ))

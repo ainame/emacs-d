@@ -1,0 +1,8 @@
+old/*
+!old/.gitkeep
+src/el-get/*
+src/auto-save-list/*
+src/ac-comphist.dat
+#**.el
+**.el~
+**.elc
