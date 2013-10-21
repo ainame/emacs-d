@@ -28,6 +28,7 @@
 (el-get 'sync 'color-occur)
 (el-get 'sync 'drag-stuff)
 (el-get 'sync 'expand-region)
+(el-get 'sync 'flex-autopair)
 (el-get 'sync 'flymake-cursor)
 (el-get 'sync 'fuzzy)
 (el-get 'sync 'gist)
