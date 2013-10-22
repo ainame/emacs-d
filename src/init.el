@@ -5,6 +5,8 @@
 		     (+ (* (- (nth 1 after-init-time) (nth 1 before-init-time)) 1000)
 			(/ (- (nth 2 after-init-time) (nth 2 before-init-time)) 1000)))))
 
+(defvar my-migemo-dir "~/local/share/migemo/utf-8/migemo-dict")
+
 ;; load-path
 ;; (setq user-emacs-directory "path/to/emacs-dir")
 (add-to-list 'load-path (expand-file-name user-emacs-directory "./"))
