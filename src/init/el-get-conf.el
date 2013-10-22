@@ -36,6 +36,7 @@
 (el-get 'sync 'git-modes)
 (el-get 'sync 'git-gutter)
 (el-get 'sync 'grep-edit)
+(el-get 'sync 'key-combo)
 (el-get 'sync 'magit)
 (el-get 'sync 'markdown-mode)
 (el-get 'sync 'migemo)
