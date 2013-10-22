@@ -5,8 +5,6 @@
 (package-initialize)
 
 ;; load-path
-(defun my-setup-abs-path (path)
-  (expand-file-name (concat user-emacs-directory path)))
 (defvar personal-dir (my-setup-abs-path "personal-conf"))
 (add-to-list 'custom-theme-load-path personal-dir)
 (add-to-list 'load-path (my-setup-abs-path "el-get"))
