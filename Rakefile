@@ -4,7 +4,7 @@ require 'date'
 
 task :copy do
   system "mkdir -p old"
-  system "cp -R ~/.emacs.d #{Dir.pwd}/old"
+  system "cp -R ~/.emacs.d/* #{Dir.pwd}/old/"
 end
 
 task :old do
@@ -13,14 +13,15 @@ task :old do
 end
 
 task :new do
-  system "rm $HOME/.emacs.d"
+  puts "rm -rf -I $HOME/.emacs.d"
+  system "rm -rf -I $HOME/.emacs.d"
   system "ln -s #{Dir.pwd}/src $HOME/.emacs.d"
 end
 
 def compile_elisp(file, load_paths = [])
   command = "emacs -batch -Q -L . -L #{load_paths.join(" -L ")} -f batch-byte-compile #{file}"
   puts command
-  execute command
+  system command
 end
 
 task :compile do
