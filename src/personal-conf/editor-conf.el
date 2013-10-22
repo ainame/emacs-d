@@ -38,21 +38,11 @@
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
 ;; keybindings for extensions
-(define-key global-map (kbd "C-c C-j") 'jaunte)
 (global-set-key (kbd "C-c t")
  '(lambda () (interactive) (multi-term)))
 (global-set-key (kbd "M-y") 'browse-kill-ring)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x d") 'find-file)
-
-(setq ns-command-modifier (quote meta))
-(setq mac-pass-control-to-system nil)
-(setq mac-pass-command-to-system nil)
-(setq mac-pass-option-to-system nil)
-(global-set-key (kbd "C-+") (lambda () (interactive) (text-scale-increase 1)))
-(global-set-key (kbd "C--") (lambda () (interactive) (text-scale-decrease 1)))
-(global-set-key (kbd "C-0") (lambda () (interactive) (text-scale-increase 0)))
-(define-key global-map [ns-drag-file] 'ns-insert-file)
 
 (defun other-window-or-split ()
   (interactive)
