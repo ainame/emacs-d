@@ -1,5 +1,6 @@
-(setq auto-mode-alist (cons '("Gemfile" . ruby-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("Rakefile" . ruby-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile" . ruby-mode))
 
 (setq ruby-deep-indent-paren-style nil)
 (defadvice ruby-indent-line (after unindent-closing-paren activate)
