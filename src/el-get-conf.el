@@ -26,6 +26,7 @@
 (el-get 'sync 'browse-kill-ring+)
 (el-get 'sync 'coffee-mode)
 (el-get 'sync 'color-occur)
+(el-get 'sync 'dash)
 (el-get 'sync 'drag-stuff)
 (el-get 'sync 'expand-region)
 (el-get 'sync 'flex-autopair)
