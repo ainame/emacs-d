@@ -1,3 +1,5 @@
+;; 外部パッケージに依存しない設定
+
 ;; 日本語環境
 (set-language-environment "Japanese")
 (set-terminal-coding-system 'utf-8)
@@ -7,15 +9,15 @@
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (setq file-name-coding-system 'utf-8)
-(defalias 'ff 'find-file)
 
 ;; 雑多な設定
+;(display-battery-mode 1)
+(defalias 'ff 'find-file)
 (setq initial-scratch-message nil)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq inhibit-startup-message t)
 (display-time-mode 1)
-(display-battery-mode 1)
 (setq backup-inhibited t)
 (which-function-mode 1)
 (global-hl-line-mode t)
@@ -27,6 +29,7 @@
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
 (global-auto-revert-mode 1)
+
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (fset 'yes-or-no-p 'y-or-n-p)
