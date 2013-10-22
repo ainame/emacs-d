@@ -48,6 +48,7 @@
 (el-get 'sync 'popwin)
 (el-get 'sync 'pos-tip)
 (el-get 'sync 'quickrun)
+(el-get 'sync 'ruby-electric)
 (el-get 'sync 'slim-mode)
 (el-get 'sync 'undo-tree)
 (el-get 'sync 'wrap-region)
