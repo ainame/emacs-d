@@ -29,9 +29,6 @@
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
 (global-auto-revert-mode 1)
-
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; keybindings
@@ -53,3 +50,11 @@
     (split-window-horizontally))
   (other-window 1))
 (global-set-key (kbd "M-p") 'other-window-or-split)
+
+;; standard package configuration
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(require 'flyspell)
+(require 'ispell)
+(setq-default ispell-program-name "aspell")
+
