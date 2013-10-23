@@ -45,7 +45,7 @@
     (setq cperl-electric-lbrace-space nil)
     (define-key cperl-mode-map (kbd ";") nil)
     (define-key cperl-mode-map (kbd ":") nil)
-    (define-key cperl-mode-map (kbd " (") nil)
+    (define-key cperl-mode-map (kbd "(") nil)
     (define-key cperl-mode-map (kbd "{") nil)
     (define-key cperl-mode-map (kbd "}") nil)
     (define-key cperl-mode-map (kbd "[") nil)
