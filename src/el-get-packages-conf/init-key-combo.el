@@ -1,7 +1,6 @@
 (require 'key-combo)
 (defvar my-key-combo-common-default
-  '((","  . ", ")
-    ("="  . (" = " " == " " === " ));;" === " for js
+  '(("="  . (" = " " == " " === " ));;" === " for js
     ("=>" . " => ")
     ("=~" . " =~ ");;for ruby regexp
     ("+"  . (" + " "++"))

@@ -5,6 +5,10 @@
 	       :website "https://github.com/magit/git-modes#readme"
 	       :type github
 	       :pkgname "magit/git-modes")
+	(:name key-combo
+	       :website "https://github.com/uk-ar/key-combo#readme"
+	       :type github
+	       :pkgname "uk-ar/key-combo")
 	(:name anything-c-moccur
 	       :type http
 	       :url "https://raw.github.com/inouetakuya/emacs/master/elisp/anything-c-moccur.el"
