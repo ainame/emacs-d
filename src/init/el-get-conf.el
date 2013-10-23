@@ -58,6 +58,7 @@
 (el-get 'sync 'slim-mode)
 (el-get 'sync 'undo-tree)
 (el-get 'sync 'wrap-region)
+(el-get 'sync 'yaml-mode)
 (el-get 'sync 'yasnippet)
 
 (provide 'el-get-conf)
