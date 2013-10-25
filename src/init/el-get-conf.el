@@ -15,46 +15,63 @@
 	       :depends (anything color-moccur)
 	       :description "anything interface for color-moccur")
 	(:name grep-edit
-	       :website "https://github.com/emacsmirror/grep-edit"
 	       :type github
+	       :website "https://github.com/emacsmirror/grep-edit"
 	       :pkgname "emacsmirror/grep-edit")
+	(:name anything-startup
+	       :type http
+	       :depends (anything)
+	       :url "https://raw.github.com/emacsmirror/emacswiki.org/master/anything-startup.el")
 	)
 )
 
-(el-get 'sync 'ace-jump-mode)
-(el-get 'sync 'auto-async-byte-compile)
-(el-get 'sync 'auto-complete)
-(el-get 'sync 'auto-install)
-(el-get 'sync 'browse-kill-ring)
-(el-get 'sync 'coffee-mode)
-(el-get 'sync 'dash)
-(el-get 'sync 'drag-stuff)
-(el-get 'sync 'expand-region)
-(el-get 'sync 'flex-autopair)
-(el-get 'sync 'flymake-cursor)
-(el-get 'sync 'flymake-easy)
-(el-get 'sync 'fuzzy)
-(el-get 'sync 'gist)
-(el-get 'sync 'git-modes)
-(el-get 'sync 'git-gutter)
-(el-get 'sync 'grep-edit)
-(el-get 'sync 'key-combo)
-(el-get 'sync 'magit)
-(el-get 'sync 'markdown-mode)
-(el-get 'sync 'migemo)
-(el-get 'sync 'motion-mode)
-(el-get 'sync 'multi-term)
-(el-get 'sync 'multiple-cursors)
-(el-get 'sync 'paredit)
-(el-get 'sync 'popup)
-(el-get 'sync 'popwin)
-(el-get 'sync 'pos-tip)
-(el-get 'sync 'quickrun)
-(el-get 'sync 'ruby-mode)
-(el-get 'sync 'ruby-end)
-(el-get 'sync 'slim-mode)
-(el-get 'sync 'undo-tree)
-(el-get 'sync 'yaml-mode)
-(el-get 'sync 'yasnippet)
+(defun my-el-get-sync (package)
+  (el-get 'sync package))
 
-(provide 'el-get-conf)
+(defun my-el-get-sync-all (packages)
+  (mapcar 'my-el-get-sync packages))
+
+(defvar my-el-get-packages
+  '(
+    ace-jump-mode
+    anything
+    anything-startup
+    anything-git-files
+    anything-c-moccur
+    auto-async-byte-compile
+    auto-complete
+    auto-install
+    browse-kill-ring
+    coffee-mode
+    cperl-mode
+    dash
+    expand-region
+    flex-autopair
+    flymake-cursor
+    flymake-easy
+    fuzzy
+    gist
+    git-modes
+    git-gutter
+    grep-edit
+    key-combo
+    magit
+    markdown-mode
+    migemo
+    motion-mode
+    multiple-cursors
+    paredit
+    popup
+    popwin
+    pos-tip
+    quickrun
+    ruby-mode
+    ruby-end
+    slim-mode
+    term+
+    undo-tree
+    yaml-mode
+    yasnippet
+    ))
+
+(provide 'my-setup/el-get-conf)

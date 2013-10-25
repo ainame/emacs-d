@@ -8,10 +8,7 @@
 
 ;; load-path
 ;; (setq user-emacs-directory "path/to/emacs-dir")
-(defun my-setup-abs-path (path)
-  (expand-file-name (concat user-emacs-directory path)))
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "./init")))
-(require 'my-environment)
 (require 'my-setup)
 
 (custom-set-variables

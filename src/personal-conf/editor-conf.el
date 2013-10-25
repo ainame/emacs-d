@@ -11,7 +11,6 @@
 (setq file-name-coding-system 'utf-8)
 
 ;; 雑多な設定
-;(display-battery-mode 1)
 (defalias 'ff 'find-file)
 (setq initial-scratch-message nil)
 (menu-bar-mode -1)
@@ -36,12 +35,6 @@
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
-
-;; keybindings for extensions
-(global-set-key (kbd "C-c t")
- '(lambda () (interactive) (multi-term)))
-(global-set-key (kbd "M-y") 'browse-kill-ring)
-(global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x d") 'find-file)
 
 (defun other-window-or-split ()
@@ -57,4 +50,3 @@
 (require 'flyspell)
 (require 'ispell)
 (setq-default ispell-program-name "aspell")
-
