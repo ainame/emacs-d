@@ -14,22 +14,19 @@
 	       :url "https://raw.github.com/inouetakuya/emacs/master/elisp/anything-c-moccur.el"
 	       :depends (anything color-moccur)
 	       :description "anything interface for color-moccur")
+	(:name grep-edit
+	       :website "https://github.com/emacsmirror/grep-edit"
+	       :type github
+	       :pkgname "emacsmirror/grep-edit")
 	)
 )
 
 (el-get 'sync 'ace-jump-mode)
-(el-get 'sync 'anything)
-(el-get 'sync 'anything-c-moccur)
-(el-get 'sync 'anything-git-files)
-(el-get 'sync 'anything-grep)
-(el-get 'sync 'anything-startup)
 (el-get 'sync 'auto-async-byte-compile)
 (el-get 'sync 'auto-complete)
 (el-get 'sync 'auto-install)
 (el-get 'sync 'browse-kill-ring)
-(el-get 'sync 'browse-kill-ring+)
 (el-get 'sync 'coffee-mode)
-(el-get 'sync 'color-occur)
 (el-get 'sync 'dash)
 (el-get 'sync 'drag-stuff)
 (el-get 'sync 'expand-region)
@@ -49,9 +46,7 @@
 (el-get 'sync 'multi-term)
 (el-get 'sync 'multiple-cursors)
 (el-get 'sync 'paredit)
-(el-get 'sync 'paredit-extension)
 (el-get 'sync 'popup)
-(el-get 'sync 'popup-pos-tip)
 (el-get 'sync 'popwin)
 (el-get 'sync 'pos-tip)
 (el-get 'sync 'quickrun)
@@ -59,7 +54,6 @@
 (el-get 'sync 'ruby-end)
 (el-get 'sync 'slim-mode)
 (el-get 'sync 'undo-tree)
-(el-get 'sync 'wrap-region)
 (el-get 'sync 'yaml-mode)
 (el-get 'sync 'yasnippet)
 

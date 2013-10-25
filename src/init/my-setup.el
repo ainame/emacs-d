@@ -14,6 +14,7 @@
 
 (setq el-get-user-package-directory (my-setup-abs-path "el-get-packages-conf"))
 (setq el-get-dir (my-setup-abs-path "el-get"))
+(setq el-get-install-skip-emacswiki-recipes nil)
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
