@@ -69,6 +69,7 @@
     ruby-end
     slim-mode
     term+
+    term+mux
     undo-tree
     yaml-mode
     yasnippet
