@@ -27,9 +27,9 @@ end
 task :compile do
   Dir.chdir('src/') do
     Dir["init/*.el", "personal-conf/*.el"].each do |f|
-      compile_elisp(f, Dir["el-get/*", "el-get/package/elpa/*"])
+      compile_elisp(f, Dir["init/*.el", "el-get/*", "el-get/package/elpa/*"])
     end
 
-    compile_elisp('init.el', Dir["el-get/*", "el-get/package/elpa/*"])
+    compile_elisp('init.el', Dir["init/*", "el-get/*", "el-get/package/elpa/*"])
   end
 end
