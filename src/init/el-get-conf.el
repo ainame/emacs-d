@@ -35,6 +35,7 @@
 (el-get 'sync 'expand-region)
 (el-get 'sync 'flex-autopair)
 (el-get 'sync 'flymake-cursor)
+(el-get 'sync 'flymake-easy)
 (el-get 'sync 'fuzzy)
 (el-get 'sync 'gist)
 (el-get 'sync 'git-modes)
