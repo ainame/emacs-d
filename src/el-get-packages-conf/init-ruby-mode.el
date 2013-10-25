@@ -1,3 +1,12 @@
+(add-hook 'ruby-mode-hook
+  '(lambda ()
+     (require 'ruby-end)
+     (ruby-end-mode t)
+     (setq ruby-end-insert-newline nil)
+     (abbrev-mode 1)
+     (electric-indent-mode t)
+     (electric-layout-mode t)))
+
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Guardfile" . ruby-mode))
