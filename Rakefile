@@ -24,12 +24,19 @@ def compile_elisp(file, load_paths = [])
   system command
 end
 
+def remove_compiled_file(file)
+  begin
+    puts file + "c"
+    FileUtils.rm(file + "c")
+  rescue
+  end
+end
+
 task :compile do
   Dir.chdir('src/') do
-    Dir["init/*.el", "personal-conf/*.el"].each do |f|
+    Dir["init/*.el", "el-get-packages-conf/*.el","personal-conf/*.el", "init.el"].each do |f|
+      remove_compiled_file(f)
       compile_elisp(f, Dir["init/*.el", "el-get/*", "el-get/package/elpa/*"])
     end
-
-    compile_elisp('init.el', Dir["init/*", "el-get/*", "el-get/package/elpa/*"])
   end
 end
