@@ -29,6 +29,7 @@
 (setq completion-ignore-case t)
 (global-auto-revert-mode 1)
 (fset 'yes-or-no-p 'y-or-n-p)
+(setq kill-whole-line t)
 
 ;; keybindings
 (global-set-key (kbd "M-/") 'hippie-expand)
