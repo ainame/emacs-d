@@ -3,7 +3,6 @@
      (require 'ruby-end)
      (ruby-end-mode t)
      (setq ruby-end-insert-newline nil)
-     (abbrev-mode 1)
      (electric-indent-mode t)
      (electric-layout-mode t)))
 
