@@ -4,7 +4,7 @@ src/el-get/*
 src/elpa/*
 src/auto-save-list/*
 src/ac-comphist.dat
-src/init/my-environment.el
+src/init/environment.el
 src/snippets
 var/*
 #**.el
