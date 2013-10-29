@@ -1,4 +1,4 @@
-(require 'key-combo)
+(key-combo-mode t)
 (defvar my-key-combo-common-default
   '(("="  . (" = " " == " " === " ));;" === " for js
     ("=>" . " => ")
@@ -47,14 +47,9 @@
     )
   )
 
-(key-combo-mode 1)
-(key-combo-define-hook 
- '(cperl-mode-hook perl-mode-hook
-                   ruby-mode-hook js-mode-hook)
- 'key-combo-common-load-default
- my-key-combo-common-default)
-
-(key-combo-define-hook
- '(cperl-mode-hook perl-mode-hook)
- 'key-combo-perl-load-default
- key-combo-perl-default)
+(key-combo-define-hook '(cperl-mode-hook perl-mode-hook ruby-mode-hook js-mode-hook)
+                       'my-key-combo-common-load-default
+                       my-key-combo-common-default)
+(key-combo-define-hook '(cperl-mode-hook perl-mode-hook)
+                       'key-combo-perl-load-default
+                       key-combo-perl-default)

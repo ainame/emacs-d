@@ -24,9 +24,10 @@
          "[\s\n\r]+$" ""
          (shell-command-to-string (concat "perldoc -lm " module " 2> /dev/null"))))))))
 
-(add-hook 
+(add-hook
  'cperl-mode-hook
  '(lambda ()
+    (key-combo-mode t)
     (cperl-set-style "PerlStyle")
     (define-key cperl-mode-map (kbd "C-c C-c") 'quickrun)
     (define-key cperl-mode-map (kbd "C-h") 'delete-backward-char)
@@ -53,4 +54,3 @@
     (setq indent-tabs-mode nil)
     (setq-default tab-width 4 indent-tabs-mode nil)
     ))
-
