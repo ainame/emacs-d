@@ -1,1 +1,1 @@
-(define-key global-map (kbd "M-s") 'er/expand-region)
+(define-key global-map (kbd "C-o") 'er/expand-region)
