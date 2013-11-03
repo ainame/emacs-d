@@ -28,7 +28,7 @@
 )
 
 (defun my-el-get-sync (package)
-  (el-get 'sync package))
+  (ignore-errors (el-get 'sync package)))
 
 (defun my-el-get-sync-all (packages)
   (mapcar 'my-el-get-sync packages))
