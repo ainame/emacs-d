@@ -50,7 +50,6 @@
     eldoc
     eldoc-extension
     expand-region
-    flex-autopair
     flymake-cursor
     flymake-easy
     fuzzy
@@ -70,8 +69,8 @@
     pos-tip
     quickrun
     ruby-mode
-    ruby-end
     slim-mode
+    smartparens
     term+
     term+mux
     undo-tree
