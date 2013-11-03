@@ -32,6 +32,7 @@
 (setq kill-whole-line t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default indent-tabs-mode nil)
+(delete-selection-mode t)
 
 ;; keybindings
 (global-set-key (kbd "M-/") 'hippie-expand)
