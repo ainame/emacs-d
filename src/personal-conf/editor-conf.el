@@ -31,6 +31,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq kill-whole-line t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default indent-tabs-mode nil)
 
 ;; keybindings
 (global-set-key (kbd "M-/") 'hippie-expand)
