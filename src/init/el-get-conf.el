@@ -78,4 +78,6 @@
     yasnippet
     ))
 
+(defalias 'ep 'el-get-list-packages)
+
 (provide 'my-setup/el-get-conf)
