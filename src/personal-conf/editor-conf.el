@@ -52,3 +52,4 @@
 (require 'flyspell)
 (require 'ispell)
 (setq-default ispell-program-name "aspell")
+(require 'eldoc)

@@ -22,6 +22,8 @@
 	       :type http
 	       :depends (anything)
 	       :url "https://raw.github.com/emacsmirror/emacswiki.org/master/anything-startup.el")
+	(:name eldoc
+	       :type builtin)
 	)
 )
 
@@ -45,6 +47,8 @@
     coffee-mode
     cperl-mode
     dash
+    eldoc
+    eldoc-extension
     expand-region
     flex-autopair
     flymake-cursor
