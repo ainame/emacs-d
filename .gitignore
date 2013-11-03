@@ -6,7 +6,7 @@ src/auto-save-list/*
 src/ac-comphist.dat
 src/init/environment.el
 src/snippets
-var/*
+src/var/*
 #**.el
 **.el~
 **.elc
