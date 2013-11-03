@@ -1,4 +1,5 @@
-(defvar my-migemo-dir "/usr/local/share/migemo/utf-8/migemo-dict")
+(defvar my-migemo-dict-dir "/usr/local/share/migemo/utf-8/migemo-dict")
+(defvar my-migemo-bin-path "/usr/local/bin/cmigemo")
 (defvar shell-file-name (executable-find "zsh"))
 
 (provide 'my-setup/environment)
