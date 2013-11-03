@@ -12,7 +12,7 @@
 (push '("*Warnings*") popwin:special-display-config)
 (push '("*Remember*" :height 30 :position bottom) popwin:special-display-config)
 (push '("*Process List*" :height 10 :position bottom :noselect t) popwin:special-display-config)
-;(push '(" *undo-tree*" :height 14 :position bottom ) popwin:special-display-config)
+(push '("*git-gutter:diff*" :height 10 :position bottom :noselect 1) popwin:special-display-config)
 (push '("*quickrun*" :height 10 :position bottom :noselect 1) popwin:special-display-config)
 (push '("*el-get packages*" :position bottom) popwin:special-display-config)
 (push '("*Selection Ring: `kill-ring'*" :position right) popwin:special-display-config)
