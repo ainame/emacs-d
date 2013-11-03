@@ -6,7 +6,7 @@
     (cond ((or (eolp)
                (not string-exists-after-cursor)
                (and string-exists-before-cursor string-exists-after-cursor))
-	   (progn (princ 1) (newline) (indent-according-to-mode)))
-          (t (progn (princ 2) (open-line 1) (indent-according-to-mode))))))
+	   (progn (newline) (indent-according-to-mode)))
+          (t (progn (open-line 1) (indent-according-to-mode))))))
 
 (define-key global-map (kbd "C-m") 'newline-or-open-line)
