@@ -27,6 +27,10 @@
 	(:name eldoc-extension
 	       :type http
 	       :url "http://www.emacswiki.org/emacs/download/eldoc-extension.el")
+	(:name smart-newline
+               :type github
+	       :website "https://github.com/ainame/smart-newline.el"
+	       :pkgname "ainame/smart-newline.el")
 	)
 )
 
@@ -73,6 +77,7 @@
     quickrun
     ruby-mode
     slim-mode
+    smart-newline
     smartparens
     term+
     term+mux
