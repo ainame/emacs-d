@@ -12,6 +12,7 @@
 
 ;; 雑多な設定
 (defalias 'ff 'find-file)
+(defalias 'df 'describe-function)
 (setq initial-scratch-message nil)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
