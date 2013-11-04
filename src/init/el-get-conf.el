@@ -24,6 +24,9 @@
 	       :url "https://raw.github.com/emacsmirror/emacswiki.org/master/anything-startup.el")
 	(:name eldoc
 	       :type builtin)
+	(:name eldoc-extension
+	       :type http
+	       :url "http://www.emacswiki.org/emacs/download/eldoc-extension.el")
 	)
 )
 
