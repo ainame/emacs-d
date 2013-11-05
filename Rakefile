@@ -40,3 +40,11 @@ task :compile do
     end
   end
 end
+
+task :clean do
+  Dir.chdir('src/') do
+    Dir["init/*.el", "el-get-packages-conf/*.el","personal-conf/*.el", "init.el"].each do |f|
+      remove_compiled_file(f)
+    end
+  end
+end
