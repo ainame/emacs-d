@@ -41,6 +41,7 @@
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
 (global-set-key (kbd "C-x d") 'find-file)
+(global-set-key (kbd "M-ESC ESC") 'keyboard-quit)
 
 (defun other-window-or-split ()
   (interactive)
