@@ -44,13 +44,14 @@
   '(
     ace-jump-mode
     anything
-    anything-startup
-    anything-git-files
     anything-c-moccur
+    anything-git-files
+    anything-startup
     auto-async-byte-compile
     auto-complete
     auto-install
     browse-kill-ring
+    bundler
     coffee-mode
     cperl-mode
     dash
@@ -61,9 +62,10 @@
     flymake-easy
     fuzzy
     gist
-    git-modes
     git-gutter
+    git-modes
     grep-edit
+    inf-ruby
     key-combo
     magit
     markdown-mode
