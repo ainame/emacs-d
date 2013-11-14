@@ -17,3 +17,4 @@
 (push '("*el-get packages*" :position bottom) popwin:special-display-config)
 (push '("*Selection Ring: `kill-ring'*" :position right) popwin:special-display-config)
 (push '("*motion-rake*" :position bottom :height 10) popwin:special-display-config)
+(push '("*Bundler*" :position bottom :height 10) popwin:special-display-config)
