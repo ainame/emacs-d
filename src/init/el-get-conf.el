@@ -58,6 +58,7 @@
     eldoc
     eldoc-extension
     expand-region
+    flymakae-jshint
     flymake-cursor
     flymake-easy
     fuzzy
@@ -66,6 +67,7 @@
     git-modes
     grep-edit
     inf-ruby
+    js3-mode
     key-combo
     magit
     markdown-mode
