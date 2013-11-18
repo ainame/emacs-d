@@ -1,0 +1,8 @@
+(add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+(add-hook 'js3-mode-hook '(lambda ()
+                            (setq js3-expr-indent-offset 4)
+                            (setq js3-paren-indent-offset 4)
+                            (setq js3-square-indent-offset 4)
+                            (setq js3-curly-indent-offset 4)
+                            (require 'flymake-jshint)
+                            (flymake-mode)))
