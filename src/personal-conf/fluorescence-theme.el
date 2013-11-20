@@ -21,7 +21,7 @@
 (custom-theme-set-faces
  'fluorescence
  '(default ((t (:background "#000000" :foreground "#eeeeec"))))
- '(cursor ((t (:background "#000000" :foreground "#cccccc"))))
+ '(cursor ((t (:background "#ffffff" :foreground "#cccccc"))))
  '(region ((t (:background "#eedc82"))))
  '(mode-line ((t (:background "#bfbfbf" :foreground "#000000"))))
  '(mode-line-inactive ((t (:background "#e5e5e5" :foreground "#333333"))))
