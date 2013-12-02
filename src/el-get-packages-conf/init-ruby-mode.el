@@ -21,6 +21,5 @@
 (add-hook 'ruby-mode-hook
   '(lambda ()
      (key-combo-mode t)
-     (setq ruby-end-insert-newline nil)
      (electric-indent-mode t)
      (electric-layout-mode t)))
