@@ -76,6 +76,7 @@
     motion-mode
     multiple-cursors
     paredit
+    perlbrew
     popup
     popwin
     pos-tip
