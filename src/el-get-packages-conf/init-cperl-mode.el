@@ -4,7 +4,7 @@
 (setq auto-mode-alist (append '(("\\.cgi$" . cperl-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.t$" . cperl-mode)) auto-mode-alist))
 (setq auto-mode-alist
-      (append (list (cons "\\.tmpl$" 'html-mode)
+      (append (list (cons "\\.tmpl$" 'sgml-mode)
                     (cons "\\.tmpl$" 'html-helper-mode))
               auto-mode-alist))
 
