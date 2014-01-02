@@ -11,3 +11,4 @@ src/.cask
 #**.el
 **.el~
 **.elc
+.mc-lists.el
