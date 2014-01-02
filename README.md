@@ -4,6 +4,7 @@ emacs-d is a pacakage of configuration files and utility rake tasks for me.
 ## usage
 
 ```sh
+$ rake            # execute :clean and :compile task
 $ rake copy       # copy ~/.emacs.d into `pwd`/old
 $ rake new        # create symbolic link to `pwd`/src
 $ rake old        # you can revert src settings
@@ -26,7 +27,6 @@ These extensions will sync to remote repos by el-get.
 * browse-kill-ring
 * bundler
 * coffee-mode
-* color-theme-solarized
 * cperl-mode
 * dash
 * eldoc
@@ -63,3 +63,5 @@ These extensions will sync to remote repos by el-get.
 * undo-tree
 * yaml-mode
 * yasnippet
+
+LastModified: 2014-01-03 06:51:14 +0900
