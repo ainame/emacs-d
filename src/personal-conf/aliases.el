@@ -1,0 +1,5 @@
+(defalias 'ff 'find-file)
+(defalias 'dk 'describe-key)
+(defalias 'df 'describe-function)
+(defalias 'db 'describe-bindings)
+(defalias 'ecb 'eval-current-buffer)

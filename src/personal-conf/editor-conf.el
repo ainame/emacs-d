@@ -1,18 +1,3 @@
-;; 外部パッケージに依存しない設定
-
-;; 日本語環境
-(set-language-environment "Japanese")
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-buffer-file-coding-system 'utf-8)
-(setq buffer-file-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(setq file-name-coding-system 'utf-8)
-
-;; 雑多な設定
-(defalias 'ff 'find-file)
-(defalias 'df 'describe-function)
 (setq initial-scratch-message nil)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -35,20 +20,20 @@
 (setq-default indent-tabs-mode nil)
 (delete-selection-mode t)
 
-;; keybindings
-(global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-h") 'backward-delete-char)
-(global-set-key (kbd "C-M-h") 'backward-kill-word)
-(global-set-key (kbd "C-x \\") 'align-regexp)
-(global-set-key (kbd "C-x d") 'find-file)
-(global-set-key (kbd "M-ESC ESC") 'keyboard-quit)
+(set-language-environment "Japanese")
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(setq file-name-coding-system 'utf-8)
 
 (defun other-window-or-split ()
   (interactive)
   (when (one-window-p)
     (split-window-horizontally))
   (other-window 1))
-(global-set-key (kbd "M-p") 'other-window-or-split)
 
 ;; standard package configuration
 (require 'uniquify)
