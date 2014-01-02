@@ -1,6 +1,7 @@
 require 'rake'
 require 'fileutils'
 require 'date'
+require 'erb'
 
 task :copy do
   system "mkdir -p old"
@@ -32,11 +33,30 @@ def remove_compiled_file(file)
   end
 end
 
+def get_el_get_packages
+  open('src/init/el-get-conf.el') do |f| 
+    conf = f.read
+    packages_string = conf.match(/\(defvar my-el-get-packages.*?\((.*?)\).*?\)/m).captures[0]
+    packages_string.each_line.to_a.map(&:strip).select{|pack| not pack.empty? }
+  end
+end
+
+def render_readme(packages)
+  @el_get_packages = packages
+  readme = open('misc/README.md.erb', 'r') do |f| 
+    template = ERB.new(f.read, nil, '<>')
+    template.result(binding)
+  end
+  open('README.md', 'w+') do |f|
+    f.puts readme
+  end
+end
+
 task :compile do
   Dir.chdir('src/') do
     Dir["init/*.el", "el-get-packages-conf/*.el","personal-conf/*.el", "init.el"].each do |f|
       remove_compiled_file(f)
-      compile_elisp(f, Dir["init/*.el", "el-get/*", "el-get/package/elpa/*"])
+      compile_elisp(f, Dir["init/", "el-get/*", "el-get/package/elpa/*"])
     end
   end
 end
@@ -47,4 +67,8 @@ task :clean do
       remove_compiled_file(f)
     end
   end
+end
+
+task :gen_readme do
+  render_readme(get_el_get_packages)
 end

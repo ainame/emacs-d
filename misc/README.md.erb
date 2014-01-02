@@ -1,0 +1,22 @@
+# emacs-d
+emacs-d is a pacakage of configuration files and utility rake tasks for me.
+
+## usage
+
+```sh
+$ rake copy       # copy ~/.emacs.d into `pwd`/old
+$ rake new        # create symbolic link to `pwd`/src
+$ rake old        # you can revert src settings
+$ rake compile    # compile conf files
+$ rake clean      # remove compiled conf files
+$ rake gen_readme # generate README.md from pacakge list
+```
+
+## using extensions
+These extensions will sync to remote repos by el-get.
+
+<% @el_get_packages.each do |pack| %>
+* <%= pack %>
+<% end %>
+
+LastModified: <%= Time.now %>
