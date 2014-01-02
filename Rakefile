@@ -19,8 +19,8 @@ task :new do
   system "ln -s #{Dir.pwd}/src $HOME/.emacs.d"
 end
 
-def compile_elisp(file, load_paths = [])
-  command = "emacs -batch -Q -L . -L #{load_paths.join(" -L ")} -f batch-byte-compile #{file}"
+def compile_elisp(file, load_paths = [], load_files = [])
+  command = "emacs -batch -Q -L . -L #{load_paths.join(" -L ")} #{load_files.empty? ? "" : " -l "+ load_files.join(" -l ") } -f batch-byte-compile #{file}"
   puts command
   system command
 end
@@ -52,11 +52,14 @@ def render_readme(packages)
   end
 end
 
+task :default => [:clean, :compile]
+
 task :compile do
   Dir.chdir('src/') do
     Dir["init/*.el", "el-get-packages-conf/*.el","personal-conf/*.el", "init.el"].each do |f|
+      next if f == "init/environment.el"
       remove_compiled_file(f)
-      compile_elisp(f, Dir["init/", "el-get/*", "el-get/package/elpa/*"])
+      compile_elisp(f, Dir["init/", "el-get/*", "el-get/package/elpa/*"], ["init/initialize.el"])
     end
   end
 end
@@ -64,6 +67,7 @@ end
 task :clean do
   Dir.chdir('src/') do
     Dir["init/*.el", "el-get-packages-conf/*.el","personal-conf/*.el", "init.el"].each do |f|
+      next if f == "init/environment.el"
       remove_compiled_file(f)
     end
   end
