@@ -56,7 +56,13 @@ task :default => [:clean, :compile]
 
 task :compile do
   Dir.chdir('src/') do
-    Dir["init/*.el", "el-get-packages-conf/*.el","personal-conf/*.el", "init.el"].each do |f|
+    Dir[
+      "init/*.el",
+      "el-get-packages-conf/*.el",
+      "personal-conf/*.el",
+      "init/my-setup.el",
+      "init.el"
+    ].each do |f|
       next if f == "init/environment.el"
       remove_compiled_file(f)
       compile_elisp(f, Dir["init/", "el-get/*", "el-get/package/elpa/*"], ["init/initialize.el"])
