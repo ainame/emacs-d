@@ -53,7 +53,6 @@
     browse-kill-ring
     bundler
     coffee-mode
-    color-theme-solarized
     cperl-mode
     dash
     eldoc
