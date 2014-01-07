@@ -1,6 +1,6 @@
 (setq initial-scratch-message nil)
 (menu-bar-mode -1)
-(tool-bar-mode -1)
+(if (window-system) (tool-bar-mode -1))
 (setq inhibit-startup-message t)
 (display-time-mode 1)
 (setq backup-inhibited t)
