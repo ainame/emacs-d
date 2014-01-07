@@ -52,6 +52,7 @@
     auto-install
     browse-kill-ring
     bundler
+    cl-lib
     coffee-mode
     cperl-mode
     dash
