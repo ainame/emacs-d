@@ -1,3 +1,4 @@
+(require 'key-combo)
 (key-combo-mode t)
 (defvar my-key-combo-common-default
   '(("="  . (" = " " == " " === " ));;" === " for js
