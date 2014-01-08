@@ -25,7 +25,8 @@
       (eval-print-last-sexp))))
 
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(when (not (file-directory-p (my-setup-abs-path "el-get/el-get/recipes/elpa")))
-  (el-get-elpa-build-local-recipes))
+(let ((target-dir (my-setup-abs-path "el-get/el-get/recipes/elpa")))
+  (when (not (file-directory-p target-dir))
+    (el-get-elpa-build-local-recipes target-dir)))
 
 (provide 'my-setup/initialize)
