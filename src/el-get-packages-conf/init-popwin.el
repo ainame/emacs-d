@@ -1,4 +1,5 @@
 (require 'popwin)
+(setq popwin:close-popup-window-timer-interval 0.05)
 (setq display-buffer-function 'popwin:display-buffer)
 (push '("*auto-async-byte-compile*" :height 14 :position bottom :noselect t) popwin:special-display-config)
 (push '(" *auto-async-byte-compile*" :height 14 :position bottom :noselect t) popwin:special-display-config)
