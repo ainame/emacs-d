@@ -82,3 +82,10 @@ end
 task :gen_readme do
   render_readme(get_el_get_packages)
 end
+
+task :reset do
+  Dir.chdir('src/') do
+    puts command = 'rm -rf ./el-get'
+    system command
+  end
+end
