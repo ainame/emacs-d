@@ -59,7 +59,7 @@
     eldoc
     eldoc-extension
     expand-region
-    flymakae-jshint
+    flymake-jshint
     flymake-cursor
     flymake-easy
     fuzzy
