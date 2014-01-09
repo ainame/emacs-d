@@ -42,6 +42,7 @@
 
 (defvar my-el-get-packages
   '(
+    cl-lib     ;; cl-lib load at first to compile other pacakges
     ace-jump-mode
     anything
     anything-c-moccur
@@ -52,7 +53,6 @@
     auto-install
     browse-kill-ring
     bundler
-    cl-lib
     coffee-mode
     cperl-mode
     dash
