@@ -83,9 +83,21 @@ task :gen_readme do
   render_readme(get_el_get_packages)
 end
 
-task :reset do
+task :initialize do
+  Dir.chdir('src/') do
+    Dir["init/*.el"].each do |f|
+      next if f == "init/environment.el"
+      remove_compiled_file(f)
+    end
+    compile_elisp('init/mysetup.el', Dir["init/", "el-get/*", "el-get/package/elpa/*"], ["init/initialize.el"])
+  end
+end
+
+task :clean_el_get do
   Dir.chdir('src/') do
     puts command = 'rm -rf ./el-get'
     system command
   end
 end
+
+task :reset => [:clean_el_get, :initialize, :default]
