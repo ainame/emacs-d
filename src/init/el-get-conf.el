@@ -81,6 +81,7 @@
     popwin
     pos-tip
     quickrun
+    rainbow-mode
     ruby-mode
     slim-mode
     smart-newline
