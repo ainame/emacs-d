@@ -1,6 +1,9 @@
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Guardfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Cheffile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Procfile" . ruby-mode))
 
 (setq ruby-deep-indent-paren-style nil)
 (defadvice ruby-indent-line (after unindent-closing-paren activate)
