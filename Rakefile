@@ -13,11 +13,21 @@ task :old do
   system "ln -s #{Dir.pwd}/old $HOME/.emacs.d"
 end
 
-task :new do
-  puts "rm -rf -I $HOME/.emacs.d"
-  system "rm -rf -I $HOME/.emacs.d"
+task :link do
   system "ln -s #{Dir.pwd}/src $HOME/.emacs.d"
 end
+
+task :delete_emacs_d_intractive do
+  puts "rm -rf -I $HOME/.emacs.d"
+  system "rm -rf -I $HOME/.emacs.d"
+end
+
+task :delete_emacs_d do
+  puts "rm -rf $HOME/.emacs.d"
+  system "rm -rf $HOME/.emacs.d"
+end
+
+task :new => [:delete_emacs_d_intractive, :link]
 
 def compile_elisp(file, load_paths = [], load_files = [])
   command = "emacs -batch -Q -L . -L #{load_paths.join(" -L ")} #{load_files.empty? ? "" : " -l "+ load_files.join(" -l ") } -f batch-byte-compile #{file}"
@@ -34,7 +44,7 @@ def remove_compiled_file(file)
 end
 
 def get_el_get_packages
-  open('src/init/el-get-conf.el') do |f| 
+  open('src/init/el-get-conf.el') do |f|
     conf = f.read
     packages_string = conf.match(/\(defvar my-el-get-packages.*?\((.*?)\).*?\)/m).captures[0]
     packages_string.each_line.to_a.map(&:strip).select{|pack| not pack.empty? }
@@ -43,7 +53,7 @@ end
 
 def render_readme(packages)
   @el_get_packages = packages
-  readme = open('misc/README.md.erb', 'r') do |f| 
+  readme = open('misc/README.md.erb', 'r') do |f|
     template = ERB.new(f.read, nil, '<>')
     template.result(binding)
   end
@@ -51,8 +61,6 @@ def render_readme(packages)
     f.puts readme
   end
 end
-
-task :default => [:clean, :compile]
 
 task :compile do
   Dir.chdir('src/') do
@@ -63,7 +71,6 @@ task :compile do
       "init/my-setup.el",
       "init.el"
     ].each do |f|
-      next if f == "init/environment.el"
       remove_compiled_file(f)
       compile_elisp(f, Dir["init/", "el-get/*", "el-get/package/elpa/*"], ["init/initialize.el"])
     end
@@ -83,6 +90,12 @@ task :gen_readme do
   render_readme(get_el_get_packages)
 end
 
+task :create_new_enviroment_el do
+  Dir.chdir('src/') do
+    FileUtils.cp 'init/environment.el.sample', 'init/environment.el'
+  end
+end
+
 task :initialize do
   Dir.chdir('src/') do
     Dir["init/*.el"].each do |f|
@@ -100,4 +113,6 @@ task :clean_el_get do
   end
 end
 
-task :reset => [:clean_el_get, :initialize, :default]
+task :default => [:clean, :compile]
+task :reset   => [:clean_el_get, :initialize, :default]
+task :install => [:delete_emacs_d, :link, :create_new_enviroment_el, :default, :default]
