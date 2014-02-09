@@ -115,4 +115,18 @@ end
 
 task :default => [:clean, :compile]
 task :reset   => [:clean_el_get, :initialize, :default]
-task :install => [:delete_emacs_d, :link, :create_new_enviroment_el, :default, :default]
+task :install => [:delete_emacs_d, :link, :create_new_enviroment_el, :default, :default, :test]
+
+task :test, :file
+task :test  do |task, args|
+  test_files =  unless args.file
+                  Dir["test/*.el"].join(" -l ")
+                else
+                  args.file
+                end
+  execute "emacs -batch -Q -L src -L test -l src/init.el"
+  exit 1 unless $?.success?
+  execute "emacs -batch -Q -L src -L test -l src/init.el -l #{test_files} -f ert-run-tests-batch-and-exit"
+  exit 1 unless $?.success?
+  puts "All tests successful."
+end
