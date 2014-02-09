@@ -97,6 +97,12 @@ task :create_new_enviroment_el do
   end
 end
 
+task :create_new_enviroment_el_for_bash do
+  Dir.chdir('src/') do
+    FileUtils.cp 'init/environment.el.bash.sample', 'init/environment.el'
+  end
+end
+
 task :initialize do
   Dir.chdir('src/') do
     Dir["init/*.el"].each do |f|
@@ -115,7 +121,8 @@ end
 
 task :default => [:clean, :compile]
 task :reset   => [:clean_el_get, :initialize, :default]
-task :install => [:delete_emacs_d, :link, :create_new_enviroment_el, :default, :default, :test]
+task :install => [:delete_emacs_d, :link, :create_new_enviroment_el, :default, :default, :default, :test]
+task :install_for_bash => [:delete_emacs_d, :link, :create_new_enviroment_el_for_bash, :default, :default, :default, :test]
 
 task :test, :file
 task :test  do |task, args|
