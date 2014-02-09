@@ -3,36 +3,13 @@ require 'fileutils'
 require 'date'
 require 'erb'
 
-task :copy do
-  system "mkdir -p old"
-  system "cp -R ~/.emacs.d/* #{Dir.pwd}/old/"
-end
-
-task :old do
-  system "rm $HOME/.emacs.d"
-  system "ln -s #{Dir.pwd}/old $HOME/.emacs.d"
-end
-
-task :link do
-  system "ln -s #{Dir.pwd}/src $HOME/.emacs.d"
-end
-
-task :delete_emacs_d_intractive do
-  puts "rm -rf -I $HOME/.emacs.d"
-  system "rm -rf -I $HOME/.emacs.d"
-end
-
-task :delete_emacs_d do
-  puts "rm -rf $HOME/.emacs.d"
-  system "rm -rf $HOME/.emacs.d"
-end
-
-task :new => [:delete_emacs_d_intractive, :link]
-
-def compile_elisp(file, load_paths = [], load_files = [])
-  command = "emacs -batch -Q -L . -L #{load_paths.join(" -L ")} #{load_files.empty? ? "" : " -l "+ load_files.join(" -l ") } -f batch-byte-compile #{file}"
+def execute(command)
   puts command
   system command
+end
+
+def compile_elisp(file, load_paths = [], load_files = [])
+  execute "emacs -batch -Q -L . -L #{load_paths.join(" -L ")} #{load_files.empty? ? "" : " -l "+ load_files.join(" -l ") } -f batch-byte-compile #{file}"
 end
 
 def remove_compiled_file(file)
@@ -61,6 +38,30 @@ def render_readme(packages)
     f.puts readme
   end
 end
+
+task :copy do
+  execute "mkdir -p old"
+  execute "cp -R ~/.emacs.d/* #{Dir.pwd}/old/"
+end
+
+task :old do
+  execute "rm $HOME/.emacs.d"
+  execute "ln -s #{Dir.pwd}/old $HOME/.emacs.d"
+end
+
+task :link do
+  execute "ln -s #{Dir.pwd}/src $HOME/.emacs.d"
+end
+
+task :delete_emacs_d_intractive do
+  execute "rm -rf -I $HOME/.emacs.d"
+end
+
+task :delete_emacs_d do
+  execute "rm -rf $HOME/.emacs.d"
+end
+
+task :new => [:delete_emacs_d_intractive, :link]
 
 task :compile do
   Dir.chdir('src/') do
@@ -108,8 +109,7 @@ end
 
 task :clean_el_get do
   Dir.chdir('src/') do
-    puts command = 'rm -rf ./el-get'
-    system command
+    execute 'rm -rf ./el-get'
   end
 end
 
