@@ -7,8 +7,8 @@
 	       :pkgname "magit/git-modes")
 	(:name key-combo
 	       :website "https://github.com/uk-ar/key-combo#readme"
-	       :type http
-	       :url "https://raw.github.com/uk-ar/key-combo/6bac93e90f80150d497d82275638e34455c6aa5f/key-combo.el")
+	       :type github
+               :pkgname "uk-ar/key-combo")
 	(:name anything-c-moccur
 	       :type http
 	       :url "https://raw.github.com/inouetakuya/emacs/master/elisp/anything-c-moccur.el"
