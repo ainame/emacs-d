@@ -1,6 +1,8 @@
 # emacs-d
 emacs-d is a pacakage of configuration files and utility rake tasks for me.
 
+[![Build Status](https://travis-ci.org/ainame/emacs-d.png?branch=master)](https://travis-ci.org/ainame/emacs-d)
+
 ## usage
 
 ```sh
@@ -11,11 +13,14 @@ $ rake old        # you can revert src settings
 $ rake compile    # compile conf files
 $ rake clean      # remove compiled conf files
 $ rake gen_readme # generate README.md from pacakge list
+$ rake test       # run tests for .emacs.d
+$ rake install    # link to ~/.emacs.d, build and test
 ```
 
 ## using extensions
 These extensions will sync to remote repos by el-get.
 
+* cl-lib     ;; cl-lib load at first to compile other pacakges
 * ace-jump-mode
 * anything
 * anything-c-moccur
@@ -32,7 +37,7 @@ These extensions will sync to remote repos by el-get.
 * eldoc
 * eldoc-extension
 * expand-region
-* flymakae-jshint
+* flymake-jshint
 * flymake-cursor
 * flymake-easy
 * fuzzy
@@ -54,6 +59,7 @@ These extensions will sync to remote repos by el-get.
 * popwin
 * pos-tip
 * quickrun
+* rainbow-mode
 * ruby-mode
 * slim-mode
 * smart-newline
@@ -64,4 +70,4 @@ These extensions will sync to remote repos by el-get.
 * yaml-mode
 * yasnippet
 
-LastModified: 2014-01-03 06:51:14 +0900
+LastModified: 2014-02-10 04:39:12 +0900
