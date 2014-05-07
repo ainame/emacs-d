@@ -5,6 +5,7 @@
 (add-to-list 'auto-mode-alist '("Cheffile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Procfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Podfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 
 (setq ruby-deep-indent-paren-style nil)
 (defadvice ruby-indent-line (after unindent-closing-paren activate)
