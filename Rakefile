@@ -3,13 +3,8 @@ require 'fileutils'
 require 'date'
 require 'erb'
 
-def execute(command)
-  puts command
-  system command
-end
-
 def compile_elisp(file, load_paths = [], load_files = [])
-  execute "emacs -batch -Q -L . -L #{load_paths.join(" -L ")} #{load_files.empty? ? "" : " -l "+ load_files.join(" -l ") } -f batch-byte-compile #{file}"
+  sh "emacs -batch -Q -L . -L #{load_paths.join(" -L ")} #{load_files.empty? ? "" : " -l "+ load_files.join(" -l ") } -f batch-byte-compile #{file}"
 end
 
 def remove_compiled_file(file)
@@ -40,25 +35,25 @@ def render_readme(packages)
 end
 
 task :copy do
-  execute "mkdir -p old"
-  execute "cp -R ~/.emacs.d/* #{Dir.pwd}/old/"
+  sh "mkdir -p old"
+  sh "cp -R ~/.emacs.d/* #{Dir.pwd}/old/"
 end
 
 task :old do
-  execute "rm $HOME/.emacs.d"
-  execute "ln -s #{Dir.pwd}/old $HOME/.emacs.d"
+  sh "rm $HOME/.emacs.d"
+  sh "ln -s #{Dir.pwd}/old $HOME/.emacs.d"
 end
 
 task :link do
-  execute "ln -s #{Dir.pwd}/src $HOME/.emacs.d"
+  sh "ln -s #{Dir.pwd}/src $HOME/.emacs.d"
 end
 
 task :delete_emacs_d_intractive do
-  execute "rm -rf -I $HOME/.emacs.d"
+  sh "rm -rf -I $HOME/.emacs.d"
 end
 
 task :delete_emacs_d do
-  execute "rm -rf $HOME/.emacs.d"
+  sh "rm -rf $HOME/.emacs.d"
 end
 
 task :new => [:delete_emacs_d_intractive, :link]
@@ -115,7 +110,7 @@ end
 
 task :clean_el_get do
   Dir.chdir('src/') do
-    execute 'rm -rf ./el-get'
+    sh 'rm -rf ./el-get'
   end
 end
 
@@ -131,9 +126,9 @@ task :test  do |task, args|
                 else
                   args.file
                 end
-  execute "emacs -batch -Q -L src -L test -l src/init.el"
+  sh "emacs -batch -Q -L src -L test -l src/init.el"
   exit 1 unless $?.success?
-  execute "emacs -batch -Q -L src -L test -l src/init.el -l #{test_files} -f ert-run-tests-batch-and-exit"
+  sh "emacs -batch -Q -L src -L test -l src/init.el -l #{test_files} -f ert-run-tests-batch-and-exit"
   exit 1 unless $?.success?
   puts "All tests successful."
 end
