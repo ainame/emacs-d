@@ -61,7 +61,12 @@ task :new => [:delete_emacs_d_intractive, :link]
 task :compile do
   Dir.chdir('src/') do
     Dir[
-      "init/*.el",
+      "init/initialize.el",
+      "init/el-get-conf.el",
+      "init/load-packages.el",
+      "init/load-personal-conf.el",
+      "init/environment.el",
+      "init/theme.el",
       "el-get-packages-conf/*.el",
       "personal-conf/*.el",
       "init/my-setup.el",
