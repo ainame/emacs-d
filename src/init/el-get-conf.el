@@ -32,7 +32,7 @@
 	       :website "https://github.com/ainame/smart-newline.el"
 	       :pkgname "ainame/smart-newline.el")
 	)
-)
+      )
 
 (defun my-el-get-sync (package)
   (el-get 'sync package))
@@ -56,12 +56,13 @@
     coffee-mode
     cperl-mode
     dash
+    dired-k
     eldoc
     eldoc-extension
     expand-region
-    flymake-jshint
     flymake-cursor
     flymake-easy
+    flymake-jshint
     fuzzy
     gist
     git-gutter
