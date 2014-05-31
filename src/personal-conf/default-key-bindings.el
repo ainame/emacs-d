@@ -2,6 +2,6 @@
 (global-set-key (kbd "C-h") 'backward-delete-char)
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
-(global-set-key (kbd "C-x d") 'find-file)
+(global-set-key (kbd "C-x d") 'dired)
 (global-set-key (kbd "M-ESC ESC") 'keyboard-quit)
 (global-set-key (kbd "M-p") 'other-window-or-split)
