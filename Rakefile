@@ -109,7 +109,7 @@ task :initialize do
       next if f == "init/environment.el"
       remove_compiled_file(f)
     end
-    compile_elisp('init/mysetup.el', Dir["init/", "el-get/*", "el-get/package/elpa/*"], ["init/initialize.el"])
+    compile_elisp('init/my-setup.el', Dir["init/", "el-get/*", "el-get/package/elpa/*"], ["init/initialize.el"])
   end
 end
 
