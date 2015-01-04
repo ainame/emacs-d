@@ -121,8 +121,8 @@ end
 
 task :default => [:clean, :compile]
 task :reset   => [:clean_el_get, :initialize, :default]
-task :install => [:delete_emacs_d, :link, :create_new_enviroment_el, :default, :default, :default, :test]
-task :install_for_bash => [:delete_emacs_d, :link, :create_new_enviroment_el_for_bash, :default, :default, :default, :test]
+task :install => [:delete_emacs_d, :link, :create_new_enviroment_el, :initialize, :default, :default, :default, :test]
+task :install_for_bash => [:delete_emacs_d, :link, :create_new_enviroment_el_for_bash, :initialize, :default, :default, :default, :test]
 
 task :test, :file
 task :test  do |task, args|
