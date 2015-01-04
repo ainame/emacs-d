@@ -11,7 +11,6 @@
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
 
 (setq el-get-user-package-directory (my-setup-abs-path "el-get-packages-conf"))
 (setq el-get-dir (my-setup-abs-path "el-get"))
