@@ -64,7 +64,7 @@
     flymake-easy
     flymake-jshint
     fuzzy
-    gist
+    ; gist
     git-gutter
     git-modes
     grep-edit
