@@ -8,6 +8,7 @@ src/init/environment.el
 src/snippets
 src/var/*
 src/.cask
+src/recentf
 #**.el
 **.el~
 **.elc
