@@ -29,5 +29,5 @@
      (electric-indent-mode t)
      (electric-layout-mode t)))
 
-(setq ruby-insert-encoding-magic-comment 'always-utf8)
+(setq ruby-insert-encoding-magic-comment nil)
 (setq ruby-encoding-map '((shift_jis . cp932) (shift-jis . cp932)))
