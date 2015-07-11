@@ -8,10 +8,3 @@
 (migemo-init)
 (set-process-query-on-exit-flag migemo-process nil)
 (setq moccur-use-migemo t)
-(setq migemo-isearch-min-length 2)
-(setq migemo-use-frequent-pattern-alist nil)
-
-;; workaround for bug
-;; see http://uwabami.junkhub.org/log/20141210.html
-(setq migemo-isearch-min-length 2)
-(setq migemo-use-frequent-pattern-alist nil)
