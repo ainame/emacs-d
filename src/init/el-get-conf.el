@@ -54,7 +54,6 @@
     browse-kill-ring
     bundler
     coffee-mode
-    cperl-mode
     dash
     dired-k
     eldoc
