@@ -73,7 +73,7 @@ task :compile do
       "init.el"
     ].each do |f|
       remove_compiled_file(f)
-      compile_elisp(f, Dir["init/", "el-get/*", "el-get/package/elpa/*"], ["init/initialize.el"])
+      compile_elisp(f, Dir["init/", "el-get/*", "el-get/anything/extensions/", "el-get/package/elpa/*"], ["init/initialize.el"])
     end
   end
 end
