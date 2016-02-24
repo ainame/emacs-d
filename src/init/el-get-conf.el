@@ -86,6 +86,7 @@
     slim-mode
     smart-newline
     smartparens
+    swift-mode
     term+
     term+mux
     undo-tree
