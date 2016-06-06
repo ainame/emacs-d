@@ -14,6 +14,8 @@
 (setq read-file-name-completion-ignore-case t)
 (setq completion-ignore-case t)
 (global-auto-revert-mode 1)
+(setq auto-revert-check-vc-info t)
+(setq vc-follow-symlinks t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq kill-whole-line t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -42,3 +44,4 @@
 (require 'ispell)
 (setq-default ispell-program-name "aspell")
 (require 'eldoc)
+(remove-hook 'find-file-hooks 'vc-find-file-hook)

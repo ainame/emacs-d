@@ -3,6 +3,7 @@
 (set-face-foreground 'git-gutter:separator "yellow")
 (define-key global-map (kbd "C-x v =") 'git-gutter:popup-hunk)
 (define-key global-map (kbd "C-x R") 'git-gutter:revert-hunk)
+(add-to-list 'git-gutter:update-hooks 'focus-in-hook)
 
 ;; (defvar git-gutter:my-threshold-of-stopping-active-update 1000)
 ;; (add-hook 'find-file-hook
